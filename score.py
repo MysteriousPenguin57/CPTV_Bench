@@ -71,7 +71,9 @@ def main():
 
     cal = s2.load_calibration()
     row = dict(cal[c["base"]])
-    work = Path(a.out_dir) / a.cell
+    # absolute: evaluator.py runs with cwd = v2_snapshot/data, so a relative path would not resolve
+    out_dir = Path(a.out_dir).resolve()
+    work = out_dir / a.cell
     if work.exists():
         shutil.rmtree(work)                      # the evaluator helpers cache eval.log; always start clean
     work.mkdir(parents=True)
@@ -95,7 +97,7 @@ def main():
         pr = compute_ptr(str(tracks), video, step, tol_px=10.0 if c["eval_mode"] == "scalefair" else 5.0)
         out.update({"ptr": pr["ptr"] if pr else None, **({k: pr[k] for k in ("STABLE", "SWAP", "LOST", "MISSING")} if pr else {})})
     print(" ".join(f"{k}={v:.4f}" if isinstance(v, float) else f"{k}={v}" for k, v in out.items()), flush=True)
-    dst = Path(a.out_dir) / "scores.csv"
+    dst = out_dir / "scores.csv"
     new = not dst.exists()
     with open(dst, "a", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(out)); new and w.writeheader(); w.writerow(out)
