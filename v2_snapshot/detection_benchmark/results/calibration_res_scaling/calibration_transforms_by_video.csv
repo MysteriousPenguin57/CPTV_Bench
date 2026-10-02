@@ -1,0 +1,5 @@
+video,H_video,W_video,viewport_x_min,viewport_x_max,viewport_y_min,viewport_y_max,slit_viewport,scale_source,scale_init,ox_init,oy_init,scale,ox,oy,best_F1,best_strategy,trusted_by_f1,trusted_by_consistency,detection_limited,consensus_cluster_size,consensus_families,slit_frames,r_min,r_max,cal_frames
+RES_A_1080,1072,1072,,,,21.093750,False,res_scaling_autofit,46.250000,48.839338,431.081932,46.250000,48.839338,431.081932,0.916412,vcc_autofit_joint,True,True,False,4,0:0.98;100:0.89;200:0.89;300:0.91,6,6,10,401
+RES_A_4K,2160,2160,,,,42.187500,False,res_scaling_autofit,46.670000,96.034078,894.368444,46.670000,96.034078,894.368444,0.878258,vcc_autofit_joint,True,True,False,4,0:0.99;100:0.93;200:0.81;300:0.79,6,6,10,401
+RES_B_1080,1072,1072,,,,20.000000,False,res_scaling_autofit,48.400000,49.932951,430.049064,48.400000,49.932951,430.049064,0.888847,vcc_autofit_joint,True,True,False,4,0:0.99;100:0.87;200:0.82;300:0.87,6,6,10,401
+RES_B_4K,2144,2144,,,,20.000000,False,res_scaling_autofit,97.300000,91.505412,853.601911,97.300000,91.505412,853.601911,0.978439,vcc_autofit_joint,True,True,False,4,0:1.00;100:0.97;200:0.97;300:0.98,6,6,10,401
